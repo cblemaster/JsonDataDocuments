@@ -1,15 +1,21 @@
-﻿using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 
 namespace JsonDataDocuments.Pages;
 
 public partial class LoginPage : Page
 {
-    public LoginPage() => InitializeComponent();
+    public LoginPage()
+    {
+        InitializeComponent();
+    }
 
-    private void YesButton_Click(object sender, RoutedEventArgs e) =>
-        throw new NotImplementedException();
+    private void YesButton_Click(object sender, System.Windows.RoutedEventArgs e)
+    {
 
-    private void NoButton_Click(object sender, RoutedEventArgs e) =>
-        throw new NotImplementedException();
+    }
+
+    private void NoButton_Click(object sender, System.Windows.RoutedEventArgs e)
+    {
+
+    }
 }
