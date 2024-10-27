@@ -1,21 +1,21 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace JsonDataDocuments.Pages;
 
 public partial class LoginPage : Page
 {
-    public LoginPage()
+    public LoginPage() => InitializeComponent();
+
+    private void YesButton_Click(object sender, RoutedEventArgs e)
     {
-        InitializeComponent();
+        throw new NotImplementedException();
+        //TODO => Nav to lookup friend
     }
 
-    private void YesButton_Click(object sender, System.Windows.RoutedEventArgs e)
+    private void NoButton_Click(object sender, RoutedEventArgs e)
     {
-
-    }
-
-    private void NoButton_Click(object sender, System.Windows.RoutedEventArgs e)
-    {
-
+        throw new NotImplementedException();
+        //TODO => Nav to create friend
     }
 }
