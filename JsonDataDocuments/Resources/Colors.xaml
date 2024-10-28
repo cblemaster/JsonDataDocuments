@@ -10,6 +10,7 @@
     <Color x:Key="MediumBlueAccent">#4D93D9</Color>
     <Color x:Key="PeachAccent">#F7C7AC</Color>
     <Color x:Key="RedAccent">Red</Color>
+    <Color x:Key="TurquoiseAccent">Turquoise</Color>
 
     <SolidColorBrush x:Key="PageBackgroundBrush" Color="{StaticResource PageBackground}"/>
     <SolidColorBrush x:Key="WhiteBrush" Color="{StaticResource White}"/>
@@ -21,4 +22,5 @@
     <SolidColorBrush x:Key="MediumBlueAccentBrush" Color="{StaticResource MediumBlueAccent}"/>
     <SolidColorBrush x:Key="PeachAccentBrush" Color="{StaticResource PeachAccent}"/>
     <SolidColorBrush x:Key="RedAccentBrush" Color="{StaticResource RedAccent}"/>
+    <SolidColorBrush x:Key="TurquoiseAccentBrush" Color="{StaticResource TurquoiseAccent}"/>
 </ResourceDictionary>
