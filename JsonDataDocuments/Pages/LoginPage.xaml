@@ -21,7 +21,7 @@
                    Text="Have you told us your favorite color in the past?"/>
         <Button Click="NoButton_Click"
                 Style="{StaticResource BigSquareButtonStyle}"
-                x:Name="YesButton"
+                x:Name="NoButton"
                 Grid.Row="1"
                 Background="{StaticResource MediumBlueAccentBrush}">
             <Button.Content>
@@ -31,8 +31,9 @@
         </Button>
         <Button Click="YesButton_Click"
                 Style="{StaticResource BigSquareButtonStyle}"
-                x:Name="NoButton"
-                Grid.Row="1" Grid.Column="1"
+                x:Name="YesButton"
+                Grid.Row="1"
+                Grid.Column="1"
                 Background="{StaticResource PeachAccentBrush}">
             <Button.Content>
                 <TextBlock Style="{StaticResource TextInBigSquareButtonStyle}"

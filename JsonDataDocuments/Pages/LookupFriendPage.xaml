@@ -16,7 +16,6 @@
                    Content="your name"/>
             <TextBox Style="{StaticResource NameInputTextBoxStyle}"
                      Validation.ErrorTemplate="{StaticResource NameValidationTemplate}"
-                     Focusable="True"
                      x:Name="NameTextBox">
                 <TextBox.Text>
                     <Binding Path="FriendName"
@@ -32,7 +31,9 @@
                     </Binding>
                 </TextBox.Text>
             </TextBox>
-            <Button Style="{StaticResource ActionButtonStyle}"
+            <!-- TODO >> Disable this button if name textbox value is invalid -->
+            <Button Click="SubmitButton_Click"
+                    Style="{StaticResource ActionButtonStyle}"
                     x:Name="SubmitButton"
                     Content="Submit"/>
         </StackPanel>
