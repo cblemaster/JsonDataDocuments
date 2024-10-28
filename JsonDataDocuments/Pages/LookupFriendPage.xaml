@@ -1,0 +1,80 @@
+﻿<Page x:Class="JsonDataDocuments.Pages.LookupFriendPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:validation="clr-namespace:JsonDataDocuments.Validation"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Loaded="Page_Loaded"
+      Title="Lookup Friend">
+    <Page.Resources>
+        <Style TargetType="Grid" x:Key="BeigeGridBackgroundStyle">
+            <Setter Property="Background" Value="Beige"/>
+        </Style>
+        <Style TargetType="StackPanel" x:Key="VertLayoutStyle">
+            <Setter Property="Orientation" Value="Vertical"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+        <Style TargetType="Label" x:Key="SmallTextboxLabelStyle">
+            <Setter Property="Foreground" Value="#002060"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Margin" Value="15,5"/>
+        </Style>
+        <Style TargetType="TextBox" x:Key="NameTextBoxStyle">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="220"/>
+            <Setter Property="Margin" Value="15,0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="True">
+                    <Setter Property="ToolTip" Value="{Binding RelativeSource={x:Static RelativeSource.Self}, Mode=OneWay,
+                        Path=(Validation.Errors)/ErrorContent}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="Button" x:Key="SubmitButtonStyle">
+            <Setter Property="Foreground" Value="#002060"/>
+            <Setter Property="Margin" Value="15"/>
+        </Style>
+        <ControlTemplate x:Key="NameValidationTemplate">
+            <DockPanel>
+                <TextBlock Foreground="Red" FontSize="20" FontWeight="UltraBold">!</TextBlock>
+                <AdornedElementPlaceholder/>
+            </DockPanel>
+        </ControlTemplate>
+    </Page.Resources>
+    <Grid Style="{StaticResource BeigeGridBackgroundStyle}"
+          x:Name="MainGrid">
+        <StackPanel Style="{StaticResource VertLayoutStyle}"
+                    x:Name="VertLayoutStackPanel">
+            <Label Style="{StaticResource SmallTextboxLabelStyle}"
+                   x:Name="NameTextBoxLabel"
+                   Content="your name"/>
+            <TextBox Style="{StaticResource NameTextBoxStyle}"
+                     Validation.ErrorTemplate="{StaticResource NameValidationTemplate}"
+                     Focusable="True"
+                     x:Name="NameTextBox">
+                <TextBox.Text>
+                    <Binding Path="FriendName"
+                             Mode="TwoWay"
+                             UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <validation:StringLengthRule>
+                                <validation:StringLengthRule.Min>1</validation:StringLengthRule.Min>
+                                <validation:StringLengthRule.Max>100</validation:StringLengthRule.Max>
+                                <validation:StringLengthRule.PropName>Name</validation:StringLengthRule.PropName>
+                            </validation:StringLengthRule>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <Button Style="{StaticResource SubmitButtonStyle}"
+                    x:Name="SubmitButton"
+                    Content="Submit"/>
+        </StackPanel>
+    </Grid>
+</Page>
