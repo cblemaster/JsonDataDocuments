@@ -33,16 +33,17 @@ public partial class FriendDetails : UserControl, INotifyPropertyChanged
                 _favoriteColor = value;
                 PropertyChanged!(this, new PropertyChangedEventArgs(nameof(FavoriteColor)));
             }
-            
+
         }
     }
-    
+
     public event PropertyChangedEventHandler? PropertyChanged = delegate { };
 
     public FriendDetails() => InitializeComponent();
 
     private void UserControl_Loaded(object sender, RoutedEventArgs e)
     {
+        //TODO >> pass in real data
         var friend = new Friend() { Id = 1, Name = "brian", FavoriteColor = Color.Blue };
         FriendName = friend.Name;
         FavoriteColor = friend.FavoriteColor;
