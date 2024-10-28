@@ -17,10 +17,6 @@ An app created to learn one alternative to relational dbs as the 'database layer
 	- View own details
 - Advanced: Update and delete functionality? [TBD]
 
-## Objectives for the project
-
-Learn about one alternative to relational dbs as the 'database layer'
-
 ## Business rules
 - User names are required and must be 100 characters or fewer
 - User names must be unique
