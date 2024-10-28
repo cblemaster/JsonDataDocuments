@@ -6,35 +6,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Login">
-    <Page.Resources>
-        <Style TargetType="Grid" x:Key="BeigeGridBackgroundStyle">
-            <Setter Property="Background" Value="Beige"/>
-        </Style>
-        <Style TargetType="TextBlock" x:Key="HeaderTextBlockStyle">
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="TextAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="34"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Foreground" Value="#FF7E350E"/>
-        </Style>
-        <Style TargetType="Button" x:Key="BigSquareButtonStyle">
-            <Setter Property="Height" Value="180"/>
-            <Setter Property="Width" Value="180"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="16"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-        </Style>
-        <Style TargetType="TextBlock" x:Key="BigButtonTextStyle">
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="TextWrapping" Value="Wrap"/>
-            <Setter Property="Margin" Value="10"/>
-        </Style>
-    </Page.Resources>
-    <Grid Style="{StaticResource BeigeGridBackgroundStyle}" x:Name="MainGrid">
+    <Grid x:Name="MainGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -43,7 +15,7 @@
             <RowDefinition Height="2*"/>
             <RowDefinition Height="8*"/>
         </Grid.RowDefinitions>
-        <TextBlock Style="{StaticResource HeaderTextBlockStyle}"
+        <TextBlock Style="{StaticResource HeaderTextStyle}"
                    x:Name="HeaderTextBlock"
                    Grid.ColumnSpan="2"
                    Text="Have you told us your favorite color in the past?"/>
@@ -51,9 +23,9 @@
                 Style="{StaticResource BigSquareButtonStyle}"
                 x:Name="YesButton"
                 Grid.Row="1"
-                Background="#4D93D9">
+                Background="{StaticResource MediumBlueAccentBrush}">
             <Button.Content>
-                <TextBlock Style="{StaticResource BigButtonTextStyle}"
+                <TextBlock Style="{StaticResource TextInBigSquareButtonStyle}"
                            Text="No, I would like to tell you my favorite color!"/>
             </Button.Content>
         </Button>
@@ -61,9 +33,9 @@
                 Style="{StaticResource BigSquareButtonStyle}"
                 x:Name="NoButton"
                 Grid.Row="1" Grid.Column="1"
-                Background="#F7C7AC">
+                Background="{StaticResource PeachAccentBrush}">
             <Button.Content>
-                <TextBlock Style="{StaticResource BigButtonTextStyle}"
+                <TextBlock Style="{StaticResource TextInBigSquareButtonStyle}"
                            Text="Yes, let me see favorite colors for me and my friends!"/>
             </Button.Content>
         </Button>
